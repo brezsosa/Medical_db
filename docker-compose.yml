@@ -1,0 +1,42 @@
+services:
+  db:
+    image: mysql:latest
+    container_name: mysql-db-medical
+    environment:
+      MYSQL_ROOT_PASSWORD: pass_05
+    ports:
+      - "3306:3306"
+    volumes:
+      - data:/var/lib/mysql
+      - ./src:/docker-entrypoint-initdb.d
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-ppass_05"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  grafana:
+    image: grafana/grafana-enterprise:latest
+    container_name: grafana-medical-dashboard
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_DATABASE_TYPE: mysql
+      GF_DATABASE_HOST: db:3306
+      GF_DATABASE_NAME: grafana_db
+      GF_DATABASE_USER: root
+      GF_DATABASE_PASSWORD: pass_05
+    restart: always
+
+volumes:
+  data:
+  grafana_data:

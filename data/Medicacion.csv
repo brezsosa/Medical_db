@@ -1,0 +1,20 @@
+medicacion_id;Droga;Tipo
+1;Quetiapina;Antipsicotico
+2;Olanzapina;Antipsicotico
+3;Risperidona;Antipsicotico
+4;Aripiprazol;Antipsicotico
+5;Haloperidol;Antipsicotico
+6;Clorpromazina;Antipsicotico
+7;Litio;Estabilizador
+8;Ácido Valproico;Estabilizador
+9;Lamotrigina;Estabilizador
+10;Carbamazepina;Estabilizador
+11;Paroxetina;Antidepresivo
+12;Sertralina;Antidepresivo
+13;Fluoxetina;Antidepresivo
+14;Venlafaxina;Antidepresivo
+15;Escitalopram;Antidepresivo
+16;Bupropion;Antidepresivo
+17;Alprazolam;Benzodiacepina
+18;Clonazepam;Benzodiacepina
+19;Diazepam;Benzodiacepina
