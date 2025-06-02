@@ -40,8 +40,8 @@ Clona este repositorio en tu máquina local:
 
 Bash
 
-git clone https://github.com/brezsosa/health_data_dashboard.git
-cd health_data_dashboard
+git clone https://github.com/brezsosa/Medical_db.git
+cd Medical_db
 
 Configuración del Entorno
 Instalar dependencias de Python:
